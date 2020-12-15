@@ -16,7 +16,7 @@ public class Empresa {
 	private HashMap<Integer, Camion> flota;
 
 	public Empresa() {
-
+		this.flota = new HashMap <Integer, Camion>();
 	}
 
 	public void agregarCamion(Camion camion) {

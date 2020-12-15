@@ -9,14 +9,16 @@ import java.util.List;
  * 
  * Desarrolle  e implemente los metodos pedido para que la clase cumpla con sus funcionalidades
  */
-public class TiendaCamion  {
+public class TiendaCamion extends Camion implements ITienda {
+	
 	private List<Producto> ventas;
 	private Boolean estadoDeCaja; // True Abierta - False Cerrada
 	
 	
-	public TiendaCamion(String Patente) {
-		
-		
+	public TiendaCamion(String patente) {
+		super(patente);
+		this.ventas = new ArrayList<Producto>();
+		this.estadoDeCaja = false;
 		
 	}
 
@@ -26,8 +28,33 @@ public class TiendaCamion  {
 	public void abrirCaja() {
 		// Al Inicicio del dia limpia todas las ventas
 		// y abre la caja diaria
-
+		this.estadoDeCaja = true;
+		this.ventas.clear();
 		
+		
+	}
+
+
+
+
+	@Override
+	public void vender(Integer idProducto) throws CajaCerradaException, ProductoInexistenteException{
+	Producto producto = null;
+		if(this.estadoDeCaja == true) {
+			this.ventas.add(producto);
+		} else {
+			throw new CajaCerradaException("La caja esta cerrada");
+		}
+		
+	}
+
+
+
+
+	@Override
+	public Reporte cierreZ() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
