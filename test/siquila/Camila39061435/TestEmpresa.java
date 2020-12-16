@@ -16,7 +16,9 @@ public class TestEmpresa {
 	//Opcional
 	@Test
 	public void queSeAgregueUnCamion() {
-	
+		Camion camion = new Camion ("ASC1465");
+		Empresa nueva = new Empresa ("La coral");
+		nueva.agregarCamion(camion);
 	}
 	
 	
